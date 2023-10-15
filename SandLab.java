@@ -75,6 +75,55 @@ public class SandLab
   //causes one random particle to maybe do something.
   public void step()
   {
+    Random rand = new Random();
+    int row = rand.nextInt(grid.length);
+    int col = rand.nextInt(grid[0].length);
+    if (grid[row][col] == SAND)
+    {
+      if (row + 1 < grid.length && grid[row + 1][col] == EMPTY)
+      {
+        grid[row + 1][col] = SAND;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col + 1 < grid[0].length && grid[row + 1][col + 1] == EMPTY)
+      {
+        grid[row + 1][col + 1] = SAND;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col - 1 >= 0 && grid[row + 1][col - 1] == EMPTY)
+      {
+        grid[row + 1][col - 1] = SAND;
+        grid[row][col] = EMPTY;
+      }
+    }
+    else if (grid[row][col] == WATER)
+    {
+      if (row + 1 < grid.length && grid[row + 1][col] == EMPTY)
+      {
+        grid[row + 1][col] = WATER;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col + 1 < grid[0].length && grid[row + 1][col + 1] == EMPTY)
+      {
+        grid[row + 1][col + 1] = WATER;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col - 1 >= 0 && grid[row + 1][col - 1] == EMPTY)
+      {
+        grid[row + 1][col - 1] = WATER;
+        grid[row][col] = EMPTY;
+      }
+      else if (col + 1 < grid[0].length && grid[row][col + 1] == EMPTY)
+      {
+        grid[row][col + 1] = WATER;
+        grid[row][col] = EMPTY;
+      }
+      else if (col - 1 >= 0 && grid[row][col - 1] == EMPTY)
+      {
+        grid[row][col - 1] = WATER;
+        grid[row][col] = EMPTY;
+      }
+    }
   }
   
   //do not modify
