@@ -12,6 +12,8 @@ public class SandLab
   //add constants for particle types here
   public static final int EMPTY = 0;
   public static final int METAL = 1;
+  public static final int SAND = 2;
+  public static final int WATER = 3;
   
   //do not add any more fields
   private int[][] grid;
@@ -20,9 +22,11 @@ public class SandLab
   public SandLab(int numRows, int numCols)
   {
     String[] names;
-    names = new String[2];
+    names = new String[4];
     names[EMPTY] = "Empty";
     names[METAL] = "Metal";
+    names[SAND] = "Sand";
+    names[WATER] = "Water";
     display = new SandDisplay("Falling Sand", numRows, numCols, names);
   }
   
