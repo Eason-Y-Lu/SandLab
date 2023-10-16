@@ -14,6 +14,7 @@ public class SandLab
   public static final int METAL = 1;
   public static final int SAND = 2;
   public static final int WATER = 3;
+  public static final int ACID = 4;
   
   //do not add any more fields
   private int[][] grid = new int[120][80];
@@ -22,11 +23,12 @@ public class SandLab
   public SandLab(int numRows, int numCols)
   {
     String[] names;
-    names = new String[4];
+    names = new String[5];
     names[EMPTY] = "Empty";
     names[METAL] = "Metal";
     names[SAND] = "Sand";
     names[WATER] = "Water";
+    names[ACID] = "Acid";
     display = new SandDisplay("Falling Sand", numRows, numCols, names);
   }
   
