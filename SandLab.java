@@ -69,6 +69,10 @@ public class SandLab
         {
           display.setColor(row, col, LIGHT_BLUE);
         }
+        else if (grid[row][col] == ACID)
+        {
+          display.setColor(row, col, Color.PINK);
+        }
       }
     }
   }
