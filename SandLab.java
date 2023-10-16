@@ -152,6 +152,34 @@ public class SandLab
         grid[row][col] = EMPTY;
       }
     }
+    if (grid[row][col] == ACID)
+    {
+      if (row + 1 < grid.length && grid[row + 1][col] == EMPTY)
+      {
+        grid[row + 1][col] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col + 1 < grid[0].length && grid[row + 1][col + 1] == EMPTY)
+      {
+        grid[row + 1][col + 1] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if (row + 1 < grid.length && col - 1 >= 0 && grid[row + 1][col - 1] == EMPTY)
+      {
+        grid[row + 1][col - 1] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if (col - 1 >= 0 && grid[row][col - 1] == EMPTY)
+      {
+        grid[row][col - 1] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if (col + 1 < grid[0].length && grid[row][col + 1] == EMPTY)
+      {
+        grid[row][col + 1] = ACID;
+        grid[row][col] = EMPTY;
+      }
+    }
   }
   
   //do not modify
