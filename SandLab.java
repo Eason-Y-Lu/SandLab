@@ -179,6 +179,26 @@ public class SandLab
         grid[row][col + 1] = ACID;
         grid[row][col] = EMPTY;
       }
+     else if ((col + 1) < grid[0].length && grid[row][col + 1] == METAL)
+     {
+        grid[row][col + 1] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if ((col + 1) < grid[0].length && grid[row][col + 1] == WATER)
+     {
+        grid[row][col + 1] = ACID;
+        grid[row][col] = ACID;
+      }
+      else if ((col - 1) >= 0 && grid[row][col - 1] == METAL)
+     {
+        grid[row][col -1 ] = ACID;
+        grid[row][col] = EMPTY;
+      }
+      else if ((col - 1) >= 0 && grid[row][col - 1] == WATER)
+     {
+        grid[row][col - 1] = ACID;
+        grid[row][col] = ACID;
+      }
     }
   }
   
