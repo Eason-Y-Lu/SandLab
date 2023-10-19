@@ -142,11 +142,21 @@ public class SandLab {
       } else if ((col + 1) < grid[0].length && grid[row][col + 1] == WATER) {
         grid[row][col + 1] = ACID;
         grid[row][col] = ACID;
-      } else if ((col - 1) >= 0 && grid[row][col - 1] == METAL) {
+      }
+      if ((col - 1) >= 0 && grid[row][col - 1] == METAL) {
         grid[row][col - 1] = ACID;
         grid[row][col] = EMPTY;
-      } else if ((col - 1) >= 0 && grid[row][col - 1] == WATER) {
+      }
+      if ((col - 1) >= 0 && grid[row][col - 1] == WATER) {
         grid[row][col - 1] = ACID;
+        grid[row][col] = ACID;
+      }
+      if ((row - 1) >= 0 && grid[row - 1][col] == WATER) {
+        grid[row][col] = ACID;
+        grid[row - 1][col] = ACID;
+      }
+      if (grid[row - 1][col] == METAL) {
+        grid[row - 1][col] = EMPTY;
         grid[row][col] = ACID;
       }
     }
